@@ -13,8 +13,11 @@ public class Link {
     private Long id;
 
     private String urlLong;
+
     private String urlShort;
+
     private String urlQrCode;
+
     private LocalDateTime createdAt;
 
     public Link() {
