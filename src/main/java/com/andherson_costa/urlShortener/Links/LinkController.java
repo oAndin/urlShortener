@@ -17,6 +17,11 @@ public class LinkController {
         this.linkService = linkService;
     }
 
+    @GetMapping({"/", "/home"})
+    public ResponseEntity<String> home() {
+        return new ResponseEntity<>("Home Page", HttpStatus.OK);
+    }
+
     @PostMapping("/url-shortener")
     public ResponseEntity<LinkResponse> shortenerUrl(@RequestBody Map<String, String> request){
 
