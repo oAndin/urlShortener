@@ -4,6 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class LinkService {
@@ -50,4 +51,12 @@ public class LinkService {
     //        return linkRepository.findByUrlLong(shortenUrl)
 //                .orElseThrow(() -> new RuntimeException("URL não existe nos nossos registros"));
 
+
+    public List<Link> getAllUrl(){
+        return linkRepository.findAll();
+    }
+
+//    public Link findAll(Link link) {
+//        return linkRepository.findAll();
+//    }
 }

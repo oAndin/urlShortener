@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -20,6 +21,18 @@ public class LinkController {
     @GetMapping({"/", "/home"})
     public ResponseEntity<String> home() {
         return new ResponseEntity<>("Home Page", HttpStatus.OK);
+    }
+
+//    @GetMapping("/url-short-list")
+//    public ResponseEntity<String> urlShortList() throws IOException{
+//        return
+//    }
+    @GetMapping("/url-list-short")
+    @ResponseBody
+    public  List<Link> urlListShort() {
+//        List<Link> links = linkService.getAllUrl();
+//        return links.toString();
+        return linkService.getAllUrl();
     }
 
     @PostMapping("/url-shortener")
